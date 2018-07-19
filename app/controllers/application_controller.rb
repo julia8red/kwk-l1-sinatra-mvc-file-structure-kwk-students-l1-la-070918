@@ -8,4 +8,10 @@ class ApplicationController < Sinatra::Base
   get "/" do
   	erb :index
   end
+  
+  post "/" do 
+    @the_fortune = get_fortune
+    @the_user = params[:user]
+    return erb :results
+  end
 end
